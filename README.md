@@ -24,6 +24,30 @@ export default defineConfig({
 })
 ```
 
+### Parent/child tags
+A "**Parent**" Tag is any tag document that does not have the parent field defined.
+
+A "**Child**" Tag is any tag document with a parent field reference.
+
+### Add tag input to schema
+Allow selecting multiple tags, but only child tags:
+```ts
+defineField({
+  name: 'tags',
+  type: 'array',
+  of: [
+    {
+      type: 'reference',
+      to: {type: 'tag'},
+      options: {
+        filter: 'defined(parent)',
+        disableNew: true,
+      },
+    }
+  ]
+})
+```
+
 ## License
 
 [MIT](LICENSE) © Ismar Slomic

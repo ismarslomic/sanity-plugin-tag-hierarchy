@@ -47,6 +47,33 @@ defineField({
   ]
 })
 ```
+#### Screenshot: Tag reference in Post document
+![tag-reference.png](doc/tag-reference.png)
+
+### Add Parent-Child tag structure in Desk
+```ts
+import { createDeskHierarchy } from 'sanity-plugin-tag-hierarchy'
+
+export default defineConfig({
+  plugins: [
+    deskTool({
+      structure: (S: StructureBuilder, context: StructureResolverContext) => {
+        return S.list()
+          .title('Content')
+          .items([
+            createDeskHierarchy(S, context.documentStore, 'Tags')
+          ])
+      },
+    }),
+  ]
+})
+```
+
+#### Screenshot: Parent tag structure in Sanity Desk
+![tag-reference.png](doc/parent-tag-structure.png)
+
+#### Screenshot: Child tag structure in Sanity Desk
+![tag-reference.png](doc/child-tag-structure.png)
 
 ## License
 

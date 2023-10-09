@@ -52,4 +52,16 @@ export const tagType = defineType({
       subtitle: parentValue ? `– ${parentValue.current}` : ``,
     }),
   },
+  orderings: [
+    {
+      title: 'Value, Ascending',
+      name: 'tagValueAsc',
+      by: [{field: 'value.current', direction: 'asc'}],
+    },
+    {
+      title: 'Value, Descending',
+      name: 'tagValueDesc',
+      by: [{field: 'value.current', direction: 'desc'}],
+    },
+  ],
 })

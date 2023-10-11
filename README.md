@@ -1,5 +1,7 @@
 # sanity-plugin-tag-hierarchy
 
+[![Build & Test](https://github.com/ismarslomic/sanity-plugin-tag-hierarchy/actions/workflows/build.yml/badge.svg)](https://github.com/ismarslomic/sanity-plugin-tag-hierarchy/actions/workflows/build.yml)
+
 > This is a **Sanity Studio v3** plugin.
 
 A multi-tag input supporting tag hierarchy (max 2 levels), grouping tagged documents in Desk tool and browsing documents by tags in the Studio.

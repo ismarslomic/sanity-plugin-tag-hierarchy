@@ -2,7 +2,7 @@
 
 > This is a **Sanity Studio v3** plugin.
 
-A multi-tag input supporting tag hierarchy, grouping tagged documents in Desk tool and browsing documents by tags in the Studio.
+A multi-tag input supporting tag hierarchy (max 2 levels), grouping tagged documents in Desk tool and browsing documents by tags in the Studio.
 
 ## Installation
 
@@ -25,6 +25,8 @@ export default defineConfig({
 ```
 
 ### Parent/child tags
+This plugin supports tag hierarchy of 2 levels: **Parent** and **Child**.
+
 A "**Parent**" Tag is any tag document that does not have the parent field defined.
 
 A "**Child**" Tag is any tag document with a parent field reference.

@@ -8,7 +8,7 @@ A multi-tag input supporting tag hierarchy (max 2 levels), grouping tagged docum
 ## Installation
 
 ```sh
-npm install sanity-plugin-tag-hierarchy
+npm install @ismarslomic/sanity-plugin-tag-hierarchy
 ```
 
 ## Usage

@@ -16,8 +16,8 @@ npm install @ismarslomic/sanity-plugin-tag-hierarchy
 Add it as a plugin in `sanity.config.ts` (or .js):
 
 ```ts
-import {defineConfig} from 'sanity'
-import {tagHierarchy} from 'sanity-plugin-tag-hierarchy'
+import { defineConfig } from 'sanity'
+import { tagHierarchy } from '@ismarslomic/sanity-plugin-tag-hierarchy'
 
 export default defineConfig({
   //...
@@ -55,7 +55,7 @@ defineField({
 
 ### Add Parent-Child tag structure in Desk
 ```ts
-import { createDeskHierarchy } from 'sanity-plugin-tag-hierarchy'
+import { createDeskHierarchy } from '@ismarslomic/sanity-plugin-tag-hierarchy'
 
 export default defineConfig({
   plugins: [

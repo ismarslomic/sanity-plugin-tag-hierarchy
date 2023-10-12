@@ -93,7 +93,11 @@ on how to run this plugin with hotreload in the studio.
 
 ### Release new version
 
+We use the [Sanity semantic-release](https://github.com/sanity-io/plugin-kit/blob/main/docs/semver-workflow.md) to 
+automate publish to NPM. 
+
 Run ["CI & Release" workflow](https://github.com/ismarslomic/sanity-plugin-tag-hierarchy/actions/workflows/main.yml).
+
 Make sure to select the main branch and check "Release new version".
 
 Semantic release will only release on configured branches, so it is safe to run release on any branch.

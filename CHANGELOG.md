@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.1](https://github.com/ismarslomic/sanity-plugin-tag-hierarchy/compare/v1.0.0...v1.0.1) (2023-10-12)
+
+### Bug Fixes
+
+- **doc:** we use the sanity semantic-release for nmp publish ([2cb8681](https://github.com/ismarslomic/sanity-plugin-tag-hierarchy/commit/2cb8681c7f56039d46731b031e0fa718a36ad2bd))
+
 ## 1.0.0 (2023-10-11)
 
 ### Features

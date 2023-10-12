@@ -1,6 +1,6 @@
 {
   "name": "@ismarslomic/sanity-plugin-tag-hierarchy",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A multi-tag input supporting tag hierarchy and tag management",
   "keywords": [
     "sanity",

@@ -54,6 +54,9 @@ defineField({
 ![tag-reference.png](doc/tag-reference.png)
 
 ### Add Parent-Child tag structure in Desk
+
+In order to hide the default structure in Desk for Tag and in stead use provided Tag hierarchy structure providrd by
+this plugin you can add following configuration in the `sanity.config.ts` (or .js):
 ```ts
 import { createDeskHierarchy } from '@ismarslomic/sanity-plugin-tag-hierarchy'
 
@@ -61,9 +64,28 @@ export default defineConfig({
   plugins: [
     deskTool({
       structure: (S: StructureBuilder, context: StructureResolverContext) => {
+        const settingsListItem: ListItemBuilder =
+          S.listItem()
+            .title(settingsType.title)
+            .icon(settingsType.icon)
+            .child(
+              S.editor()
+                .id(settingsType.name)
+                .schemaType(settingsType.name)
+                .documentId(settingsType.name)
+            )
+
+        const defaultListItems: ListItemBuilder[] = S.documentTypeListItems().filter(
+          (listItem) => (listItem.getId() !== settingsType.name) && (!['tag'].includes(listItem.getId()))
+        )
+
         return S.list()
           .title('Content')
           .items([
+            settingsListItem,
+            S.divider(),
+            ...defaultListItems,
+            S.divider(),
             createDeskHierarchy(S, context.documentStore, 'Tags')
           ])
       },
@@ -71,6 +93,10 @@ export default defineConfig({
   ]
 })
 ```
+
+Note that the example above is based on the Sanity template
+[Blog with Built-in Content Editing](https://www.sanity.io/templates/blog-with-built-in-content-editing). You need to
+adjust the desk structure items according to your needs.
 
 #### Screenshot: Parent tag structure in Sanity Desk
 ![tag-reference.png](doc/parent-tag-structure.png)
@@ -89,7 +115,6 @@ with default configuration for build & watch scripts.
 
 See [Testing a plugin in Sanity Studio](https://github.com/sanity-io/plugin-kit#testing-a-plugin-in-sanity-studio)
 on how to run this plugin with hotreload in the studio.
-
 
 ### Release new version
 
